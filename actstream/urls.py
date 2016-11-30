@@ -1,6 +1,8 @@
 import django
 try:
-    from django.conf.urls import url, patterns
+    from django.conf.urls import url 
+    if django.VERSION[:2] < (1, 9): 
+        from django.conf.urls import patterns
 except ImportError:
     from django.conf.urls.defaults import url, patterns
 
